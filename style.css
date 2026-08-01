@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffd6e7,#fff5f8);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    width:90%;
+    max-width:500px;
+}
+
+h1{
+    color:#ff4f81;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:35px;
+}
+
+.envelope{
+    position:relative;
+    width:320px;
+    height:220px;
+    margin:auto;
+    background:#ff8fb1;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.6s;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.top{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:120px solid #ff6b98;
+    transform-origin:top;
+    transition:.6s;
+}
+
+.paper{
+    position:absolute;
+    left:20px;
+    top:20px;
+    width:280px;
+    height:180px;
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    transform:translateY(50px);
+    opacity:0;
+    transition:.8s;
+    overflow:auto;
+}
+
+.envelope.open .top{
+    transform:rotateX(180deg);
+}
+
+.envelope.open .paper{
+    transform:translateY(-40px);
+    opacity:1;
+}
+
+.paper h2{
+    color:#ff4f81;
+    margin-bottom:15px;
+}
+
+.paper p{
+    color:#555;
+    line-height:1.7;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 28px;
+    border:none;
+    border-radius:40px;
+    background:#ff4f81;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#musicBtn{
+    background:#8e44ad;
+}
+
+#loveBtn{
+    display:none;
+}
+
+.background-hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.background-hearts::before{
+    content:"💖 💗 💕 💞 💓";
+    position:absolute;
+    width:100%;
+    font-size:35px;
+    animation:float 18s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
